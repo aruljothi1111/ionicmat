@@ -1,0 +1,7 @@
+{
+  "name": "ionicmat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
