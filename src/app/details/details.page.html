@@ -2,7 +2,7 @@
   <div style="color: white;font-size: 16px;padding: 20px 40px;font-weight: 600;display: flex;"><ion-icon name="arrow-back-outline" style="cursor: pointer;font-size: 20px;padding-right: 5px;" routerLink="/home"></ion-icon> <span> Daily Recommendations</span></div>
   <div class="card-stack">
     <div class="card" *ngFor="let obj of clients;" [id]=obj.id #card>
-      <ion-card  >
+      <ion-card  style="cursor: pointer;">
         <img alt="Silhouette of mountains" [src]="obj.image" style="width: 400px;height: 180px;"  draggable="false" />
         <ion-card-header>
           <div class="icon-text-container">

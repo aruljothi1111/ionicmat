@@ -1,5 +1,5 @@
 import { Component, OnInit,ElementRef, ViewChildren, QueryList, Renderer2 ,AfterViewInit, AfterViewChecked } from '@angular/core';
-import { ClientService } from 'src/service/clients.service';
+import { ClientService } from 'src/assets/service/clients.service';
 import { GestureController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 @Component({

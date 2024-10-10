@@ -1,6 +1,6 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core';
 import Swiper, { Autoplay, Pagination, Navigation } from 'swiper'; // Import Swiper and modules
-import { ClientService } from 'src/service/clients.service';
+import { ClientService } from 'src/assets/service/clients.service';
 import { Router } from '@angular/router';
 // Initialize Swiper with the necessary modules
 Swiper.use([Autoplay, Pagination, Navigation]);
@@ -33,6 +33,7 @@ if(this.firsttime == false){
     this.router.navigate(['/details']);
   }
   ngOnInit() {
+    /// swiper initialize//////
     this.swiper = new Swiper('.swiper-container', {
       slidesPerView: 1,
       spaceBetween: 10,
@@ -67,6 +68,7 @@ if(this.firsttime == false){
     setTimeout(() => {
       this.swiper?.update();  // Ensures it adapts to breakpoints after rendering
     }, 100); 
+    ///// get client list from service//////
     this.clientService.getClients().then((data) =>{ this.clients = data.sort((a:any, b:any) => a.id - b.id);
     });
 
