@@ -1,0 +1,52 @@
+
+.card-stack {
+    position: relative;
+    margin-top: 50px !important;
+    width: 350px;
+    margin: auto;
+    height: 100%; /* Set a height for the stack */
+  }
+  
+  .card {
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 0;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+  }
+  
+  .card:nth-child(1) {
+    transform: translateY(-30px); /* Bottom card */
+  }
+  
+  .card:nth-child(2) {
+    transform: translateY(-20px); /* Second card */
+  }
+  
+  .card:nth-child(3) {
+    transform: translateY(-10px); /* Third card */
+  }
+  
+  .card:nth-child(4) {
+    transform: translateY(0px); /* Fourth card */
+  }
+  
+  ion-card {
+    position: absolute; /* Allows cards to overlap and move freely */
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-out; /* Smooth transitions for movement */
+  }
+  .icon-text-container {
+    display: flex;
+    align-items: center; /* Ensures icon and text are vertically aligned */
+  }
+  
+  .icon {
+    margin-right: 5px; /* Add spacing between icon and text */
+  }
+  
+  .text {
+    font-size: 12px; /* Adjust text size */
+  }
+  

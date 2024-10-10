@@ -1,0 +1,12 @@
+@import '~swiper/swiper-bundle.min.css';
+.swiper-container {
+    width: 95%;
+  }
+  
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    font-size: 20px;
+  }

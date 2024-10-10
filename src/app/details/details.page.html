@@ -1,0 +1,39 @@
+<ion-content style="--background: #00a1ff;width: 100%;height: 100%;">
+  <div style="color: white;font-size: 16px;padding: 20px 40px;font-weight: 600;display: flex;"><ion-icon name="arrow-back-outline" style="cursor: pointer;font-size: 20px;padding-right: 5px;" routerLink="/home"></ion-icon> <span> Daily Recommendations</span></div>
+  <div class="card-stack">
+    <div class="card" *ngFor="let obj of clients;" [id]=obj.id #card>
+      <ion-card  >
+        <img alt="Silhouette of mountains" [src]="obj.image" style="width: 400px;height: 180px;"  draggable="false" />
+        <ion-card-header>
+          <div class="icon-text-container">
+            <ion-icon name="checkmark-circle-outline" class="icon" style="color: blue;"></ion-icon>
+            <span class="text" style="color: blue;">Verified</span>
+            <ion-icon name="checkmark-circle-outline" class="icon" style="padding-left: 10px;"></ion-icon>
+            <span class="text">Premium NRI</span>
+          </div>
+          <ion-card-title style="font-weight: 700;">{{obj.name}}</ion-card-title>
+          <ion-card-subtitle>{{obj.description}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          <div class="icon-text-container" style="justify-content: space-between;">
+            <div style="display: flex;">
+          <ion-icon name="star-outline" class="icon" style="font-size: 20px;" *ngIf="!obj.shortlist" (click)="obj.shortlist = true;changeShort(obj.id,true)"></ion-icon>
+          <ion-icon name="star" class="icon" style="font-size: 20px;color: orange;" *ngIf="obj.shortlist" (click)="obj.shortlist = false;changeShort(obj.id,false)"></ion-icon>
+          <span class="text" style="font-size: 14px;">Shortlist</span>
+            </div>
+          <div class="icon-text-container">
+            <span style="color: black;font-weight: 600;">Like her?</span>
+          
+                    <ion-button style="    --border-radius: 20px;
+            --background: #FFFFFF;--color:gray;margin-left:10px;" (click)="goNext('NotInterested',obj.id)"><ion-icon name="close-outline"></ion-icon></ion-button>
+              <ion-button style="    --border-radius: 20px;
+            --background: orange;" (click)="goNext('Interested',obj.id)"><ion-icon name="checkmark-outline"></ion-icon></ion-button>
+</div>
+        </div>
+        
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
